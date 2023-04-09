@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PYTHON_VERSION = '3.9.0'
+        PYTHON_VERSION = '3.11'
     }
     tools {
         pyenv 'pyenv'
