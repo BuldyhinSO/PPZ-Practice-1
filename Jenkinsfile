@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Run project') {
             steps{
+                sh 'cd todo'
                 sh 'pip3 install -r requirements.txt'
             }
         }
