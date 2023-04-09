@@ -17,6 +17,8 @@ pipeline {
                 dir ('todo'){
                     sh 'ls'
                     sh 'pip3 install -r requirements.txt'
+                    sh 'python3 manage.py migrate'
+                    sh 'python3 manage.py runserver 0.0.0.0:8000'
                 }
             }
         }
