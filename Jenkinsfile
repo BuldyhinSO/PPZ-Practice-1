@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        POETRY_PYTHON = "/opt/homebrew/lib/python3.11"
+    }
+
     stages {
         stage('Build') {
             steps {
