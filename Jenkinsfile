@@ -18,7 +18,8 @@ pipeline {
                         sh 'python --version'
                         sh 'pip install --upgrade pip'
                         sh 'poetry install'
-                        sh 'poetry shell'
+                        sh 'poetry run manage.py test'
+                        sh 'poetry run flake8 .'
                     }
                 }
             }
