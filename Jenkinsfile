@@ -16,6 +16,7 @@ pipeline {
             steps{
                 dir ('todo'){
                     sh 'ls'
+                    sh 'pip3 install --upgrade pip'
                     sh 'pip3 install -r requirements.txt'
                     sh 'python3 manage.py test'
                     sh 'flake8 .'
