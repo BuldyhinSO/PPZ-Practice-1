@@ -27,7 +27,7 @@ pipeline {
     post {
         always {
             script {
-                def server = sh(script: "jps | grep 'django.core.management' | awk '{ print $1 }'", returnStdout: true).trim()
+                def server = sh(script: "jps | grep 'django.core.management' | awk '{ print \${1} }'", returnStdout: true).trim()
                 sh "kill $server"
             }
         }
