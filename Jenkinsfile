@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/opt/homebrew/bin/poetry"
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -13,14 +17,13 @@ pipeline {
             }
         }
         stage('Run project') {
-            steps{
-                dir ('todo'){
-                    withPythonEnv('Python3.11'){
-                        sh 'ls'
+            steps {
+                dir ('todo') {
+                    withPythonEnv('Python3.11') {
                         sh 'python --version'
                         sh 'pip install --upgrade pip'
-                        sh 'curl -sSL https://install.python-poetry.org | python -'
-                        sh 'poetry install && poetry shell'
+                        sh 'poetry install'
+                        sh 'poetry shell'
                     }
                 }
             }
