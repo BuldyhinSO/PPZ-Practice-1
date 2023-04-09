@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        PYTHON_VERSION = '3.11'
-    }
     stages {
         stage('Checkout') {
             steps {
@@ -13,6 +10,11 @@ pipeline {
             }
         }
         stage ('Run'){
+            agent{
+                docker {
+                    image : 'python:3.11-slim-buster'
+                }
+            }
             steps {
                 sh 'cd todo'
                 sh 'pip install -r requirements.txt'
