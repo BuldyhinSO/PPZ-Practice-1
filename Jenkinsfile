@@ -29,8 +29,9 @@ pipeline {
                 dir ('todo'){
                     withPythonEnv('Python3.11'){
                         sh 'ls'
-                        sh 'pip3 install --upgrade pip'
-                        sh 'curl -sSL https://install.python-poetry.org | python3 -'
+                        sh 'python --version'
+                        sh 'pip install --upgrade pip'
+                        sh 'curl -sSL https://install.python-poetry.org | python -'
                         sh 'poetry env use 3.11'
                         sh 'poetry install && poetry shell'
                     }
