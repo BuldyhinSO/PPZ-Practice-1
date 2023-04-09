@@ -33,7 +33,7 @@ pipeline {
                 dir ('todo'){
                     sh 'ls'
                     sh 'pip3 install --upgrade pip'
-                    sh 'curl -sSL https://install.python-poetry.org | python3.11'
+                    sh 'curl -sSL https://install.python-poetry.org | python3.11 -'
                     sh 'poetry env use 3.11'
                     sh 'poetry install && poetry shell'
                 }
