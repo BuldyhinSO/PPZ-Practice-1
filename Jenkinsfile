@@ -18,7 +18,7 @@ pipeline {
                     sh 'ls'
                     sh 'pip3 install -r requirements.txt'
                     sh 'python3 manage.py test'
-                    sh 'flake8'
+                    sh 'flake8 .'
                 }
             }
         }
