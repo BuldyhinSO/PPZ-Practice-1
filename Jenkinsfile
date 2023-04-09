@@ -32,7 +32,6 @@ pipeline {
                         sh 'python --version'
                         sh 'pip install --upgrade pip'
                         sh 'curl -sSL https://install.python-poetry.org | python -'
-                        sh 'poetry env use 3.11'
                         sh 'poetry install && poetry shell'
                     }
                 }
