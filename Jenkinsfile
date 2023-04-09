@@ -20,7 +20,7 @@ pipeline {
                     sh 'pip3 install -r requirements.txt'
                     sh 'python3 manage.py test'
                     sh 'pip3 install flake8'
-                    sh 'flake8 .'
+                    sh '/Users/ybw0000/Library/Python/3.9/bin/flake8 .'
                 }
             }
         }
