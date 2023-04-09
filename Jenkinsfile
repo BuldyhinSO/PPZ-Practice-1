@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        POETRY_PYTHON = "/opt/homebrew/lib/python3.11"
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -31,11 +27,13 @@ pipeline {
             stage('Run project') {
             steps{
                 dir ('todo'){
-                    sh 'ls'
-                    sh 'pip3 install --upgrade pip'
-                    sh 'curl -sSL https://install.python-poetry.org | python3.11 -'
-                    sh 'poetry env use 3.11'
-                    sh 'poetry install && poetry shell'
+                    withPythonEnv('Python3.11'){
+                        sh 'ls'
+                        sh 'pip3 install --upgrade pip'
+                        sh 'curl -sSL https://install.python-poetry.org | python3.11 -'
+                        sh 'poetry env use 3.11'
+                        sh 'poetry install && poetry shell'
+                    }
                 }
             }
         }
