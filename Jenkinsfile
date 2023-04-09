@@ -12,7 +12,7 @@ pipeline {
         stage ('Run'){
             agent{
                 docker {
-                    image = 'python:3.11-slim-buster'
+                    image 'python:3.11-slim-buster'
                 }
             }
             steps {
