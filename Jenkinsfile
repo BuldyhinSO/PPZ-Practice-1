@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Clone'){
             steps {
-                sh 'git clone https://github.com/BuldyhinSO/PPZ-Practice-1.git'
+                git 'https://github.com/BuldyhinSO/PPZ-Practice-1.git'
             }
         }
         stage('Run project') {
