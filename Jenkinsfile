@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin/poetry"
+        PATH = "/opt/homebrew/bin/poetry:${env.PATH}"
     }
 
     stages {
