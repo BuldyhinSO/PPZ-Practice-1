@@ -14,9 +14,10 @@ pipeline {
         }
         stage('Run project') {
             steps{
-                sh 'cd PPZ-Practice-1/todo/'
-                sh 'ls'
-                sh 'pip3 install -r requirements.txt'
+                dir ('todo'){
+                    sh 'ls'
+                    sh 'pip3 install -r requirements.txt'
+                }
             }
         }
     }
