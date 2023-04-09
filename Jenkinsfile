@@ -2,16 +2,11 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin/poetry:${env.PATH}"
+        PATH = "/opt/homebrew/bin:${env.PATH}"
     }
 
     stages {
-        stage('Build') {
-            steps {
-                sh 'python3 -c "print(\'Hello World\')"'
-            }
-        }
-        stage('Clone'){
+        stage('Clone') {
             steps {
                 git 'https://github.com/BuldyhinSO/PPZ-Practice-1.git'
             }
